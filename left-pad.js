@@ -1,28 +1,22 @@
 function power2(x, n, id, f) {
     y = id;
-
     while (true) {
-        t = n % 2;
-        n = n>>1;
-
-        if (t == 1) {
+        if (n%2 == 1) {
             y = f(y, x);
         }
-
+        n = n>>1;
         if (n == 0) {
             break;
         }
-
         x = f(x, x);
     }
-
     return y;
 }
 
-function repeat(s, n) {
-    return power2(s, n, "", function (a, b) {
+function leftpad(s, c, n) {
+    return power2(c, n, "", function (a, b) {
                return a + b;
-           });
+           }) + s;
 }
-
-module.exports = repeat;
+console.log(leftpad('hi','b',5));
+module.exports = leftpad;
