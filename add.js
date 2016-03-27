@@ -1,0 +1,1 @@
+function add(a){    var all = a;    var x = function(b){        all += b;        return x;    }    x.toString = function(){return all;}    return x;}console.log(add(2)(3)(4).toString());console.log(add('hi')(' ')('u').toString());
