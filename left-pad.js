@@ -18,5 +18,5 @@ function leftpad(s, c, n) {
                return a + b;
            }) + s;
 }
-console.log(leftpad('hi','b',5));
+
 module.exports = leftpad;
